@@ -1,5 +1,9 @@
+DataStructures.iml
+.idea/
 .DS_Store
 .classpath
 .project
 .settings/
 .git/
+out/
+bin/
