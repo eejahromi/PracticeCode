@@ -28,6 +28,20 @@ public class BinaryTree {
         return node;
     }
 
+    public Node search(int value) {
+        return find(root,value);
+    }
+
+    private Node find(Node node, int value) {
+        if(node == null || node.data == value) {
+            return node;
+        } else if(value <= node.data) {
+            return find(node.left,value);
+        } else {
+            return find(node.right,value);
+        }
+    }
+
     public void preOrderTraversal() {
         performPreOrderTraversal(root);
     }

@@ -16,6 +16,7 @@ public class Driver {
         System.out.println(tree.size());
         System.out.println("Min is " + tree.minimum().data);
         System.out.println("Max is " + tree.maximum().data);
+        System.out.println("Find " + tree.search(1));
 
     }
 }
