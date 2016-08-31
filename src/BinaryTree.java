@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  *  BinaryTree.java
  */
@@ -40,6 +42,26 @@ public class BinaryTree {
         } else {
             return find(node.right,value);
         }
+    }
+    
+    public Node findSecondLargest() {
+    	if(size() < 2) {
+    		throw new IllegalArgumentException("Not enough inputs in the tree!");
+    	}
+    	
+    	Node currentNode = root;
+    	
+    	while(true) {
+    		if(currentNode.left != null && currentNode.right == null) {
+    			return maximum();
+    		}
+    		
+    		if(currentNode.right != null && currentNode.right.left == null && currentNode.right.right == null) {
+    			return currentNode;
+    		}
+    		
+    		currentNode = currentNode.right;
+    	}
     }
 
     public void preOrderTraversal() {
