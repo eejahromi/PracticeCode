@@ -40,6 +40,28 @@ public class BinaryTree {
         performPostOrderTraversal(root);
     }
 
+    public Node minimum() {
+        return min(root);
+    }
+
+    public Node maximum() {
+        return max(root);
+    }
+
+    private Node max(Node node) {
+        if(node.right == null) {
+            return node;
+        }
+        return max(node.right);
+    }
+
+    private Node min(Node node) {
+        if(node.left == null) {
+            return node;
+        }
+        return min(node.left);
+    }
+
     public int size() {
         return countNodes(root);
     }
