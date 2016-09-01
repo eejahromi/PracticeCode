@@ -84,8 +84,20 @@ public class BinaryTree {
     		currentNode = currentNode.right;
     	}
     }
+    
+    public int findTreeHeight() {
+    	return countLeafs(root);
+    }
 
-    public void preOrderTraversal() {
+    private int countLeafs(Node node) {
+		if(node == null) {
+			return -1;
+		}
+		
+		return Math.max(countLeafs(node.left), countLeafs(node.right)) + 1;
+	}
+
+	public void preOrderTraversal() {
         performPreOrderTraversal(root);
     }
 
