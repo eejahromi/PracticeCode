@@ -16,6 +16,27 @@ public class BinaryTree {
     public void insert(int data) {
         root = insertNode(root,data);
     }
+    
+    public void initTreeWithArray(int array[]) {
+    	if(array == null || array.length == 0) {
+    		throw new IllegalArgumentException("Invalid input!");
+    	}
+    	
+    	root = insertArray(array,0,array.length-1);
+    }
+    
+    public Node insertArray(int array[],int lower,int upper) {
+    	if(lower > upper) {
+    		return null;
+    	}
+    	int mid = (upper + lower)/2;
+    	Node currentNode = new Node(array[mid]);
+    	
+    	currentNode.left = insertArray(array,lower,mid-1);
+    	currentNode.right = insertArray(array,mid+1,upper);
+    	
+    	return currentNode;
+    }
 
     private Node insertNode(Node node,int data) {
         if(node == null) {
