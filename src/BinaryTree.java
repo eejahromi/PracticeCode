@@ -131,6 +131,27 @@ public class BinaryTree {
     	
     	return true;
     }
+    
+    public void printEdges() {
+    	printLeft(root);
+    	printRight(root.right);
+    }
+    
+    private void printLeft(Node node) {
+    	if(node == null) {
+    		return;
+    	}
+    	printLeft(node.left);
+    	System.out.print(node.data + " ");
+    }
+    
+    private void printRight(Node node) {
+    	if(node == null) {
+    		return;
+    	}
+    	System.out.print(node.data + " ");
+    	printRight(node.right);
+    }
 
 	public void preOrderTraversal() {
         performPreOrderTraversal(root);

@@ -14,6 +14,7 @@ public class Driver {
         tree.insert(1);
         tree.insert(6);
         tree.insert(8);
+        tree.insert(7);
         
 
         tree.inOrderTraversal();
@@ -24,7 +25,7 @@ public class Driver {
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
-        System.out.print(tree.validateBinarySearchTree());
+        tree.printEdges();
 
     }
 }
