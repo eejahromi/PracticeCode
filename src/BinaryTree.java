@@ -110,6 +110,26 @@ public class BinaryTree {
 		
 		return Math.max(countLeafs(node.left), countLeafs(node.right)) + 1;
 	}
+    
+    public boolean validateBinarySearchTree() {
+    	return validate(root,null,null);
+    }
+    
+    private boolean validate(Node node,Integer min,Integer max) {
+    	if(node == null) {
+    		return true;
+    	}
+    	
+    	if((max != null && node.data > max) || (min != null && node.data <= min)) {
+    		return false;
+    	} 
+    	
+    	if(!validate(node.left,min,node.data) || !validate(node.right,node.data,max)) {
+    		return false;
+    	}
+    	
+    	return true;
+    }
 
 	public void preOrderTraversal() {
         performPreOrderTraversal(root);
@@ -195,4 +215,5 @@ public class BinaryTree {
             data = d;
         }
     }
+    
 }

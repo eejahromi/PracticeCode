@@ -24,7 +24,7 @@ public class Driver {
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
-        System.out.print(tree.findLowestCommonAncestor(1,4).data);
+        System.out.print(tree.validateBinarySearchTree());
 
     }
 }
