@@ -8,8 +8,8 @@ public class Driver {
     	BinaryTree tree = new BinaryTree();
     	//tree.initTreeWithArray(array);
         tree.insert(5);
-        tree.insert(4);
         tree.insert(3);
+        tree.insert(4);
         tree.insert(2);
         tree.insert(1);
         tree.insert(6);
@@ -24,7 +24,7 @@ public class Driver {
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
-        System.out.print(tree.findTreeHeight());
+        System.out.print(tree.findLowestCommonAncestor(1,4).data);
 
     }
 }

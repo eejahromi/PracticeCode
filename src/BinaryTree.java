@@ -85,6 +85,20 @@ public class BinaryTree {
     	}
     }
     
+    public Node findLowestCommonAncestor(int value1,int value2) {
+    	return findCommonAncestor(root,value1,value2);
+    }
+    
+    private Node findCommonAncestor(Node node,int value1,int value2) {
+    	if(value1 < node.data && value2 < node.data) {
+    		return findCommonAncestor(node.left,value1,value2);
+    	} else if (value1 > node.data && value2 > node.data) {
+    		return findCommonAncestor(node.right,value1,value2);
+    	} else {
+    		return node;
+    	}
+    }
+    
     public int findTreeHeight() {
     	return countLeafs(root);
     }
