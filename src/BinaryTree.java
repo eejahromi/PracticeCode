@@ -1,7 +1,8 @@
-import java.util.Stack;
-
 /**
  *  BinaryTree.java
+ *  A Binary Search Tree class with an inner node class.
+ *  All Methods are implemented as instance methods.
+ *  All methods in this class are implemented using recursion.
  */
 public class BinaryTree {
 
