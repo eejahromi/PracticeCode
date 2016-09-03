@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Driver.java
@@ -15,7 +16,8 @@ public class Driver {
         tree.insert(6);
         tree.insert(8);
         tree.insert(7);
-        
+    	
+    	//initTreeWithPreOrderList(tree);
 
         tree.inOrderTraversal();
         System.out.println();
@@ -27,6 +29,18 @@ public class Driver {
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
         System.out.println(tree.findKLargest(3));
         
-
+    }
+    
+    private static void initTreeWithPreOrderList(BinaryTree tree) {	
+    	ArrayList<Integer> list= new ArrayList<Integer>();
+    	list.add(43);
+    	list.add(23);
+    	list.add(37);
+    	list.add(29);
+    	list.add(31);
+    	list.add(41);
+    	list.add(47);
+    	list.add(53);
+        tree.initWithPreOrderList(list);
     }
 }

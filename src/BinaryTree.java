@@ -9,11 +9,10 @@ import java.util.ArrayList;
 public class BinaryTree {
 
     public Node root;
-    private int size;
+    private int rootIndex; 
 
     public BinaryTree() {
         root = null;
-        size = 0;
     }
 
     public void insert(int data) {
@@ -26,6 +25,30 @@ public class BinaryTree {
     	}
     	
     	root = insertArray(array,0,array.length-1);
+    }
+    
+    public Node initWithPreOrderList(ArrayList<Integer> list) {
+    	rootIndex = 0;
+    	return root = constructTreeOnValueRange(list,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+    
+    private Node constructTreeOnValueRange(ArrayList<Integer> list,Integer lowerBound,Integer upperBound) {
+    	if(rootIndex == list.size()) {
+    		return null;
+    	}
+    	
+    	Integer root = list.get(rootIndex);
+    	if(root < lowerBound || root > upperBound) {
+    		return null;
+    	}
+    	rootIndex++;
+    	Node leftSubtree = constructTreeOnValueRange(list,lowerBound,root);
+    	Node rightSubtree = constructTreeOnValueRange(list,root,upperBound);
+    	
+    	Node currentNode = new Node(root);
+    	currentNode.left = leftSubtree;
+    	currentNode.right = rightSubtree;
+    	return currentNode;
     }
     
     public Node insertArray(int array[],int lower,int upper) {
