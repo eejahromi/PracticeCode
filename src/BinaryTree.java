@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  *  BinaryTree.java
  *  A Binary Search Tree class with an inner node class.
@@ -111,6 +113,25 @@ public class BinaryTree {
 		
 		return Math.max(countLeafs(node.left), countLeafs(node.right)) + 1;
 	}
+    
+    public ArrayList<Integer> findKLargest(int k) {
+    	if(size() < k) {
+    		throw new IllegalArgumentException("Tree is not large enough!");
+    	}
+    	ArrayList<Integer> list = new ArrayList<Integer>();
+    	findLargestNodes(root,k,list);
+    	return list;
+    }
+    
+    private void findLargestNodes(Node node,int k,ArrayList<Integer> list) {
+    	if(node != null && list.size() < k) {
+    		findLargestNodes(node.right,k,list);
+    		if(list.size() < k) {
+    			list.add(node.data);
+    			findLargestNodes(node.left,k,list);
+    		}
+    	}
+    }
     
     public boolean validateBinarySearchTree() {
     	return validate(root,null,null);

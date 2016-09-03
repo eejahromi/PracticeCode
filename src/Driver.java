@@ -25,7 +25,8 @@ public class Driver {
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
-        tree.printEdges();
+        System.out.println(tree.findKLargest(3));
+        
 
     }
 }
