@@ -250,6 +250,37 @@ public class BinaryTree {
 
         return countNodes(node.left) + 1 + countNodes(node.right);
     }
+    
+    public boolean isBalanced() {
+    	if(checkHeight(root) == -1) {
+    		return false;
+    	} else {
+    		return true;
+    	}
+    }
+    
+    private int checkHeight(Node node) {
+    	if(node == null) {
+    		return 0;
+    	}
+    	
+    	int leftHeight = checkHeight(node.left);
+    	if(leftHeight == -1) {
+    		return -1;
+    	}
+    	
+    	int rightHeight = checkHeight(node.right);
+    	if(rightHeight == -1) {
+    		return -1;
+    	}
+    	
+    	int heightDifference = Math.abs(leftHeight - rightHeight);
+    	if(heightDifference > 1) {
+    		return -1;
+    	} else {
+    		return Math.max(leftHeight, rightHeight) + 1;
+    	}
+    }
 
     private void performPreOrderTraversal(Node node) {
         if(node == null) {
