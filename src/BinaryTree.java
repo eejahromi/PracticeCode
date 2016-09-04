@@ -281,6 +281,23 @@ public class BinaryTree {
     		return Math.max(leftHeight, rightHeight) + 1;
     	}
     }
+    
+    public boolean isSymmetric() {
+    	return root == null || checkSymmetric(root.left,root.right);
+    }
+    
+    private boolean checkSymmetric(Node subtreeOne,Node subtreeTwo) {
+    	if(subtreeOne == null && subtreeTwo == null) {
+    		return true;
+    	} 
+    	else if(subtreeOne != null && subtreeTwo != null) {
+    		return subtreeOne.data == subtreeTwo.data &&
+    				checkSymmetric(subtreeOne.left,subtreeTwo.right) &&
+    				checkSymmetric(subtreeOne.right,subtreeTwo.left);
+    	}
+    	
+    	return false;
+    }
 
     private void performPreOrderTraversal(Node node) {
         if(node == null) {

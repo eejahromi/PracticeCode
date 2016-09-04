@@ -27,8 +27,8 @@ public class Driver {
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
-        System.out.println(tree.findKLargest(3));
-        System.out.println(tree.isBalanced());
+        //System.out.println(tree.findKLargest(3));
+        System.out.println(tree.isSymmetric());
         
     }
     
