@@ -177,8 +177,16 @@ public class BinaryTree {
     }
     
     public void printEdges() {
-    	printLeft(root);
-    	printRight(root.right);
+    	if(root.left != null) {
+    		printLeft(root);
+    	}
+    	
+    	System.out.print(root.data + " ");
+    	
+    	if(root.right != null) {
+    		printRight(root.right);
+    	}
+    	
     }
     
     private void printLeft(Node node) {
