@@ -126,15 +126,15 @@ public class BinaryTree {
     }
     
     public int findTreeHeight() {
-    	return countLeafs(root);
+    	return countBranchNodes(root);
     }
 
-    private int countLeafs(Node node) {
+    private int countBranchNodes(Node node) {
 		if(node == null) {
 			return -1;
 		}
 		
-		return Math.max(countLeafs(node.left), countLeafs(node.right)) + 1;
+		return Math.max(countBranchNodes(node.left), countBranchNodes(node.right)) + 1;
 	}
     
     public ArrayList<Integer> findKLargest(int k) {
@@ -203,6 +203,23 @@ public class BinaryTree {
     	}
     	System.out.print(node.data + " ");
     	printRight(node.right);
+    }
+    
+    public boolean hasPathSum(int targetSum) {
+    	return pathSum(root,0,targetSum);
+    }
+    
+    private boolean pathSum(Node node,int partialSum,int targetSum) {
+    	if(node == null) {
+    		return false;
+    	}
+    	
+    	partialSum += node.data;
+    	if(node.left == null && node.right == null) {
+    		return partialSum == targetSum;
+    	} 
+    	
+    	return pathSum(node.left,partialSum,targetSum) || pathSum(node.right,partialSum,targetSum);
     }
 
 	public void preOrderTraversal() {
