@@ -28,7 +28,7 @@ public class Driver {
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
         //System.out.println(tree.findKLargest(3));
-        System.out.println(tree.hasPathSum(12));
+        System.out.println(tree.createLevelLinkedList());
         
     }
     

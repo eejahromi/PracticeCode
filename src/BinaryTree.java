@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *  BinaryTree.java
@@ -174,6 +175,29 @@ public class BinaryTree {
     	}
     	
     	return true;
+    }
+    
+    public ArrayList<LinkedList<Node>> createLevelLinkedList() {
+    	ArrayList<LinkedList<Node>> lists = new ArrayList<LinkedList<Node>>();
+    	levelLinkedList(root,lists,0);
+    	return lists;
+    }
+    
+    private void levelLinkedList(Node node,ArrayList<LinkedList<Node>> lists,int level) {
+    	if(node == null) {
+    		return;
+    	}
+    	
+    	LinkedList<Node> list = null;
+    	if(lists.size() == level) {
+    		list = new LinkedList<Node>();
+    		lists.add(list);
+    	} else {
+    		list = lists.get(level);
+    	}
+    	list.add(node);
+    	levelLinkedList(node.left,lists,level+1);
+    	levelLinkedList(node.right,lists,level+1);
     }
     
     public void printEdges() {
