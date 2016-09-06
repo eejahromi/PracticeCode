@@ -5,9 +5,9 @@ import java.util.ArrayList;
  */
 public class Driver {
     public static void main(String [] args) {
-        //int array[] = {1,3,4,5,7,9,12,23,45};
+        
     	BinaryTree tree = new BinaryTree();
-    	//tree.initTreeWithArray(array);
+    	
         tree.insert(5);
         tree.insert(3);
         tree.insert(4);
@@ -17,13 +17,20 @@ public class Driver {
         tree.insert(8);
         tree.insert(7);
     	
+        // Initializing tree with array
+        //int array[] = {1,3,4,5,7,9,12,23,45};
+        //tree.initTreeWithArray(array);
     	//initTreeWithPreOrderList(tree);
 
         tree.inOrderTraversal();
         System.out.println();
         System.out.println(tree.size());
+        
+        // Tree Min and Max
         //System.out.println("Min is " + tree.minimum().data);
         //System.out.println("Max is " + tree.maximum().data);
+        
+        // Searching tree for node with value
         //System.out.println("Find " + tree.search(1));
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);

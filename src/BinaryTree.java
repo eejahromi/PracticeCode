@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class BinaryTree {
 
     public Node root;
-    private int rootIndex; 
+    private static int rootIndex; 
 
     public BinaryTree() {
         root = null;
@@ -79,16 +79,16 @@ public class BinaryTree {
     }
 
     public Node search(int value) {
-        return find(root,value);
+        return search(root,value);
     }
 
-    private Node find(Node node, int value) {
+    private Node search(Node node, int value) {
         if(node == null || node.data == value) {
             return node;
         } else if(value <= node.data) {
-            return find(node.left,value);
+            return search(node.left,value);
         } else {
-            return find(node.right,value);
+            return search(node.right,value);
         }
     }
     
@@ -127,15 +127,15 @@ public class BinaryTree {
     }
     
     public int findTreeHeight() {
-    	return countBranchNodes(root);
+    	return findTreeHeight(root);
     }
 
-    private int countBranchNodes(Node node) {
+    private int findTreeHeight(Node node) {
 		if(node == null) {
 			return -1;
 		}
 		
-		return Math.max(countBranchNodes(node.left), countBranchNodes(node.right)) + 1;
+		return Math.max(findTreeHeight(node.left), findTreeHeight(node.right)) + 1;
 	}
     
     public ArrayList<Integer> findKLargest(int k) {
