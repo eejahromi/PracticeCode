@@ -43,6 +43,22 @@ public class BinarySearchTree {
 		}
 	}
 	
+	public Node search(int value) {
+		Node current = root;
+		
+		while(current != null) {
+			if(value == current.data) {
+				return current;
+			} else if(value <= current.data) {
+				current = current.left;
+			} else {
+				current = current.right;
+			}
+		}
+		
+		return null;
+	}
+	
 	public void inOrderTraversal() {
 		Stack<Node> stack = new Stack<>();
 		Node current = root;

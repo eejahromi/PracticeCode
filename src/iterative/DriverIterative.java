@@ -10,6 +10,7 @@ public class DriverIterative {
 		tree.insert(7);
 		
 		tree.inOrderTraversal();
+		System.out.println("\n" + tree.search(6));
 
 	}
 
