@@ -74,6 +74,33 @@ public class BinarySearchTree {
 		return current;
 	}
 	
+	public boolean validateBST() {
+		Stack<NodeBounds> stack = new Stack<NodeBounds>();
+		stack.push(new NodeBounds(root,Integer.MIN_VALUE,Integer.MAX_VALUE));
+		
+		while(!stack.isEmpty()) {
+			NodeBounds nb = stack.pop();
+			Node current = nb.node;
+			int upper = nb.upperbound;
+			int lower = nb.lowerbound;
+			
+			if(current.data < lower || current.data > upper) {
+				return false;
+			}
+			
+			if(current.left != null) {
+				stack.push(new NodeBounds(current.left,lower,current.data));
+			}
+			
+			if(current.right != null) {
+				stack.push(new NodeBounds(current.right,current.data,upper));
+			}
+		}
+		
+		return true;
+	}
+
+	
 	public void inOrderTraversal() {
 		Stack<Node> stack = new Stack<>();
 		Node current = root;
@@ -104,6 +131,18 @@ public class BinarySearchTree {
 			}
 		}
 		System.out.print(result);
+	}
+	
+	class NodeBounds {
+		Node node;
+		int upperbound;
+		int lowerbound;
+		
+		public NodeBounds(Node n,int lower,int upper) {
+			node = n;
+			lowerbound = lower;
+			upperbound = upper;
+		}
 	}
 	
 	

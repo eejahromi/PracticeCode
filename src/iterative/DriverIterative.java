@@ -13,7 +13,7 @@ public class DriverIterative {
 		tree.insert(10);
 		
 		tree.inOrderTraversal();
-		System.out.println("\n" + tree.lowestCommonAncestor(11, 1).data);
+		System.out.println("\n" + tree.validateBST());
 
 	}
 
