@@ -59,6 +59,21 @@ public class BinarySearchTree {
 		return null;
 	}
 	
+	public Node lowestCommonAncestor(int first,int second) {
+		Node current = root;
+		
+		while(current != null) {
+			if(first < current.data && second < current.data) {
+				current = current.left;
+			} else if(first > current.data && second > current.data){
+				current = current.right;
+			} else {
+				break;
+			}
+		}
+		return current;
+	}
+	
 	public void inOrderTraversal() {
 		Stack<Node> stack = new Stack<>();
 		Node current = root;
