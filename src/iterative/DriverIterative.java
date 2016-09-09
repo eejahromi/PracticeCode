@@ -13,7 +13,8 @@ public class DriverIterative {
 		tree.insert(10);
 		
 		tree.inOrderTraversal();
-		System.out.println("\n" + tree.validateBST());
+		System.out.println();
+		tree.printLevelNodes();
 
 	}
 

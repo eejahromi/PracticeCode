@@ -3,6 +3,7 @@ package iterative;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 import org.omg.CORBA.Current;
@@ -131,6 +132,26 @@ public class BinarySearchTree {
 			}
 		}
 		System.out.print(result);
+	}
+	
+	public void printLevelNodes() {
+		printLevels(root);
+	}
+	
+	private void printLevels(Node node) {
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.add(root);
+		while(!queue.isEmpty()) {
+			Node n = queue.poll();
+			System.out.print(n.data + " ");
+			if(n.left != null) {
+				queue.add(n.left);
+			}
+			if(n.right != null) {
+				queue.add(n.right);
+			}
+			
+		}
 	}
 	
 	class NodeBounds {
