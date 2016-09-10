@@ -200,6 +200,27 @@ public class BinaryTree {
     	levelLinkedList(node.right,lists,level+1);
     }
     
+    public void printPathToLeaf() {
+    	ArrayList<Integer> list = new ArrayList<Integer>();
+    	printRootToLeaf(root,list);
+    }
+    
+    private void printRootToLeaf(Node node,ArrayList<Integer> list) {
+    	if(node == null) {
+    		return;
+    	}
+    	
+    	list.add(node.data);
+    	
+    	if(node.left == null && node.right == null) {
+    		//printPath(list);
+    		System.out.println(list);
+    	} else {
+    		printRootToLeaf(node.left,list);
+    		printRootToLeaf(node.right,list);
+    	}
+    }
+    
     public void printEdges() {
     	if(root.left != null) {
     		printLeft(root);

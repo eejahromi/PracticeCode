@@ -8,14 +8,12 @@ public class Driver {
         
     	BinaryTree tree = new BinaryTree();
     	
-        tree.insert(5);
+        tree.insert(8);
         tree.insert(3);
-        tree.insert(4);
-        tree.insert(2);
         tree.insert(1);
         tree.insert(6);
-        tree.insert(8);
-        tree.insert(7);
+        tree.insert(10);
+        tree.insert(14);
     	
         // Initializing tree with array
         //int array[] = {1,3,4,5,7,9,12,23,45};
@@ -23,6 +21,7 @@ public class Driver {
     	//initTreeWithPreOrderList(tree);
 
         tree.inOrderTraversal();
+        //tree.printPathToLeaf();
         System.out.println();
         System.out.println(tree.size());
         
@@ -35,7 +34,7 @@ public class Driver {
         
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
         //System.out.println(tree.findKLargest(3));
-        System.out.println(tree.createLevelLinkedList());
+        //System.out.println(tree.createLevelLinkedList());
         
     }
     
