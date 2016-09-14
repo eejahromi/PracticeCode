@@ -27,7 +27,7 @@ public class MergeSort {
         int i=0;
         int lowerbound = low;
         int mid = high - 1;
-        int elementCount = upperbound - lowerbound;
+        int elementCount = upperbound - lowerbound+1;
 
         while(low <= mid && high <= upperbound) {
             if(n[low] <= n[high]) {

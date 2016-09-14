@@ -1,3 +1,5 @@
+import Sorts.MergeSort;
+
 import java.util.ArrayList;
 
 /**
@@ -5,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Driver {
     public static void main(String [] args) {
-        
+
     	BinaryTree tree = new BinaryTree();
     	
         tree.insert(8);
@@ -20,7 +22,7 @@ public class Driver {
         //tree.initTreeWithArray(array);
     	//initTreeWithPreOrderList(tree);
 
-        tree.inOrderTraversal();
+        //tree.inOrderTraversal();
         //tree.printPathToLeaf();
         System.out.println();
         System.out.println(tree.size());
@@ -35,7 +37,8 @@ public class Driver {
         //System.out.println("Find second largest: " + tree.findSecondLargest().data);
         //System.out.println(tree.findKLargest(3));
         //System.out.println(tree.createLevelLinkedList());
-        
+
+        //testMergeSort();
     }
     
     private static void initTreeWithPreOrderList(BinaryTree tree) {	
@@ -50,4 +53,15 @@ public class Driver {
     	list.add(53);
         tree.initWithPreOrderList(list);
     }
+
+    private static void testMergeSort() {
+        int array[] = {15,4,8,6,25,41,3,1};
+        int arr[] = MergeSort.mergeSort(array);
+
+        for (int i :
+                arr) {
+            System.out.print(i + " ");
+        }
+    }
+
 }
