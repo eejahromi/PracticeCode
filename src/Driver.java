@@ -1,4 +1,5 @@
 import Sorts.MergeSort;
+import Sorts.QuickSort;
 
 import java.util.ArrayList;
 
@@ -38,7 +39,7 @@ public class Driver {
         //System.out.println(tree.findKLargest(3));
         //System.out.println(tree.createLevelLinkedList());
 
-        //testMergeSort();
+        testSorts();
     }
     
     private static void initTreeWithPreOrderList(BinaryTree tree) {	
@@ -54,14 +55,21 @@ public class Driver {
         tree.initWithPreOrderList(list);
     }
 
-    private static void testMergeSort() {
+    private static void testSorts() {
         int array[] = {15,4,8,6,25,41,3,1};
-        int arr[] = MergeSort.mergeSort(array);
 
-        for (int i :
-                arr) {
+        int arr[];
+
+        /* MergeSort or QuickSort */
+
+        //arr = MergeSort.mergeSort(array);
+        arr = QuickSort.quickSort(array);
+
+
+        for (int i : arr) {
             System.out.print(i + " ");
         }
     }
+
 
 }
