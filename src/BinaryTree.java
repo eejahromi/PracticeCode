@@ -132,7 +132,7 @@ public class BinaryTree {
 
     private int findTreeHeight(Node node) {
 		if(node == null) {
-			return -1;
+			return 0;
 		}
 		
 		return Math.max(findTreeHeight(node.left), findTreeHeight(node.right)) + 1;

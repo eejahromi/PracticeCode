@@ -12,11 +12,12 @@ public class Driver {
     	BinaryTree tree = new BinaryTree();
     	
         tree.insert(8);
-        tree.insert(3);
+        tree.insert(4);
         tree.insert(1);
         tree.insert(6);
         tree.insert(10);
         tree.insert(14);
+        tree.insert(9);
     	
         // Initializing tree with array
         //int array[] = {1,3,4,5,7,9,12,23,45};
@@ -26,7 +27,7 @@ public class Driver {
         //tree.inOrderTraversal();
         //tree.printPathToLeaf();
         System.out.println();
-        System.out.println(tree.size());
+        System.out.println(tree.findTreeHeight());
         
         // Tree Min and Max
         //System.out.println("Min is " + tree.minimum().data);
@@ -39,7 +40,7 @@ public class Driver {
         //System.out.println(tree.findKLargest(3));
         //System.out.println(tree.createLevelLinkedList());
 
-        testSorts();
+        //testSorts();
     }
     
     private static void initTreeWithPreOrderList(BinaryTree tree) {	
@@ -56,7 +57,7 @@ public class Driver {
     }
 
     private static void testSorts() {
-        int array[] = {15,4,8,6,25,41,3,1};
+        int array[] = {15,4,8,6,25,41,3,1,12};
 
         int arr[];
 
