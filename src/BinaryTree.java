@@ -56,7 +56,7 @@ public class BinaryTree {
     	if(lower > upper) {
     		return null;
     	}
-    	int mid = (upper + lower)/2;
+    	int mid = lower + (upper - lower)/2;
     	Node currentNode = new Node(array[mid]);
     	
     	currentNode.left = insertArray(array,lower,mid-1);
