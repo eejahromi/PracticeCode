@@ -101,7 +101,8 @@ public class BinaryTree {
     	
     	while(true) {
     		if(currentNode.left != null && currentNode.right == null) {
-    			return maximum();
+			currentNode = currentNode.left;
+    			return max(currentNode);
     		}
     		
     		if(currentNode.right != null && currentNode.right.left == null && currentNode.right.right == null) {
